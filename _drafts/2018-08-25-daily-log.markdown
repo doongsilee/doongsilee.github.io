@@ -1,0 +1,8 @@
+---
+layout: "post"
+title: "Daily Log"
+date: "2018-08-25 16:07:06 +0900"
+---
+
+The most important thing for leader might be the ability which is knowing that what is the most important
+Thing now.

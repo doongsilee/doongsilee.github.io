@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <!-- <h1 class="page-heading">{{ page.title }}</h1> -->
+  {%- endif -%}
+  <img class="img-main"src="https://lh3.googleusercontent.com/Cc4JArug-PAfPep35xuJO1IlPXy7v0YgN9goUEBNPmuwO7fcRmS3F99OP20tV0lxmZpQ9RcaCRZD-Gf5oj4BxePyBrOr5r9kQsC7aezmcBGXM05sNqFfLNqCXE-Vz5YnsavWnKYIUPjMoN9H1FVIz9dnkRRyHbE9n4jvLAyphdN_TpwtORCw_f4hyQ-LxAx_I3ZmuP3j9SK4zfd_PQtCsnwq62ocYKtFHFogsvw5uHpx8hVa2TLAO5_d0u-NFTzHnYeM7WkMF3XexDFqPF1-sr9_S2iQvN8dNkh_smsLS4mhesn_MoZLmWCKKiXiHbaqUmY7D9GcExfz5Ilnj-TAVqi_YOhhfrrTgqL1jeOM3vwIJE-fq2ggZ_gnwRTDbIfxkl6ZDTlEVKOl0tKX5aGRnsTWQWRB7azygAUFErZPOiA0Ek3oZEF6fHgEmCEYOLtA1B3yXKsx59Xqt_2PhDLQblArSSRKB7VOCCJ21d3Zz7bnttHkGZS84rkwrFh38r4MKWrIBKh5huYuLdae5iU3VjnLXmceKN731rpTQ-2gYRfjWYqT-5Uf1CFmO2e3klyF1iRuKq4iUA-ARf8GNUZ9v7IFKqXI2hLQyDQh-91QjZj9Gm6RHtyFJLrgSEjNOfNv9tfseBidnH1xBoocwVNfFVlL1TIS01g9kp458S-kJRlo51n4vq_tYsWn=s946-no">
+  {{ content }}
+
+  <!-- {%- if site.posts.size > 0 -%}
+    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%} -->
+
+</div>

@@ -1,0 +1,70 @@
+---
+layout: "post"
+title: "css-flex"
+date: "2018-12-05 16:34"
+---
+
+# CSS Flex 정리
+
+> [freecodecamp](https://learn.freecodecamp.org/) 의 Applied Visual Design 내용을 나름대로 다시 정리한것임을 밝힙니다. freecodecamp 만세
+
+# CSS flex
+```css
+   sample {
+     display: flex;
+   }
+```
+# flex direction
+```css
+   sample {
+     flex-direction: row;
+     flex-direction: column;
+     flex-direction: row-reverse;
+     flex-direction: column-reverse;
+   }
+```
+# flex items align
+```css
+   sample {
+     justify-content: center;
+     justify-content: flex-end;
+     justify-content: flex-start;
+     justify-content: space-around;
+     justify-content: space-between;
+
+     align-items: baseline;
+     align-items: center;
+     align-items: flex-end;
+     align-items: flex-start;
+     align-items: stretch;
+   }
+```
+
+# flex wrap & order
+```css
+  sample {
+    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+    flex-wrap: nowrap;
+
+    order: 1 // 작을수록 먼저 나온다.
+  }
+```
+# flex basis & shrink & grow
+```css
+  sample {
+    flex-basis: 10px; //main-asis basis
+    flex-grow: 0; // 클수록 더 빨리 커진다
+    flex-shrink: 1; // 클수록 더 빨리 작아진다.
+
+    flex: 0 1 auto; // grow shrink basis 순이다.
+  }
+```
+# flex align itself
+why justify-self doesn't exist?
+```css
+  sample {
+    align-self: auto; // 모든 align-items: 와 동일한 값을 받을수 있다.
+  }
+
+```

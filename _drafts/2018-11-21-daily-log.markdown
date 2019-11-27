@@ -1,0 +1,21 @@
+---
+layout: "post"
+title: "daily-log"
+date: "2018-11-21 10:41"
+---
+
+
+## Daily Activity log
+
+### 오전
+
+~ 08:20 기상
+~ 09:30 출근
+~ 11:30 Web Application Source Code 분석
+
+### 오후
+
+~ 13:00 점심
+~ 15:00 외주 개발 회의
+~ 16:00 안드로이드 버그 분석
+~ 17:30 Web Application Source Code 분석
