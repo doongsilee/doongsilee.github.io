@@ -22,7 +22,7 @@ title: 두웅-실 유니버쓰
 email: hyunwoo086@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hi, Welcome to doongsilee universe.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://doongsilee.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 facebook_username: doongsilee
 instagram_username: doongsilee
