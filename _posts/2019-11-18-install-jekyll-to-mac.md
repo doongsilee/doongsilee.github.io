@@ -6,6 +6,21 @@ date:   2019-11-18 12:31:11 +0900
 categories: jekyll install mac
 ---
 
+# Update ('21.02)
+20년형 맥북에서도 마찬가지로 설치가 안된다.   
+이번엔 CommandLineTools로 바꿔도 안되는듯 하다.
+문제는 CommandLineTools 경로에 darwin19, darwin20 폴더 이름 문제다.
+맥에서의 폴더 이름은 darwin20인데, Jekyll 설치중에는 darwin19 경로를 찾는것이다.
+간단하게 동일한 경로에 심볼링 링크를 걸어서 해결했다.
+
+```sh
+sudo ln -sf universal-darwin20 universal-darwin19
+
+```
+
+[여기](https://stackoverflow.com/questions/63729369/commonmarker-gem-cannot-be-installed-needed-for-jekyll-macos)를 참고 했다
+
+
 # Jekyll 설치 for MAC OS Catalina
 
 회사를 그만두며 회사에서 사준 Mac 을 반납하고 Mac을 개인용으로 다시 사야했다.   
