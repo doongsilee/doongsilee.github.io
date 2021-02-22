@@ -7,10 +7,10 @@ categories: jekyll install mac
 ---
 
 # Update ('21.02)
-20년형 맥북에서도 마찬가지로 설치가 안된다.   
-이번엔 CommandLineTools로 바꿔도 안되는듯 하다.
-문제는 CommandLineTools 경로에 darwin19, darwin20 폴더 이름 문제다.
-맥에서의 폴더 이름은 darwin20인데, Jekyll 설치중에는 darwin19 경로를 찾는것이다.
+20년형 맥북에서도 마찬가지로 설치가 안된다.   (M1 칩 전 모델)  
+이번엔 CommandLineTools로 바꿔도 안되는듯 하다.  
+문제는 CommandLineTools 경로에 darwin19, darwin20 폴더 이름 문제다.  
+맥에서의 폴더 이름은 darwin20인데, Jekyll 설치중에는 darwin19 경로를 찾는것이다.  
 간단하게 동일한 경로에 심볼링 링크를 걸어서 해결했다.
 
 ```sh
@@ -108,6 +108,7 @@ bundle install
 
     sudo xcode-select --switch /Library/Developer/CommandLineTools 
     # 위의 Developer Tools를 새로 설치한 경로에는 Header 가 있으므로 바꿔준다. 
+    # *** 경고 이 명렁은 Xcode 와 관련된 환경 전체가 바뀐다. 따라서 현재 경로로 세팅해서 개발하고 있는 다른 프로젝트가 있다면 문제가 발생할 수 있다. ***
 
     ruby -rrbconfig -e 'puts RbConfig::CONFIG["rubyhdrdir"]' 
     # 잘 바뀌었나 확인해보자.
