@@ -1,40 +1,115 @@
-import Link from 'next/link'
+import Link from "next/link";
+import { Dohyun } from "app/ui/fonts";
 
 const navItems = {
-  '/': {
-    name: 'home',
+  "/": {
+    name: "Home",
   },
-  '/blog': {
-    name: 'blog',
+  "/about": {
+    name: "About",
   },
-  'https://vercel.com/templates/next.js/portfolio-starter-kit': {
-    name: 'deploy',
+  "/blog": {
+    name: "Blog",
   },
-}
+  "/Portfolio": {
+    name: "Portfolio",
+  },
+  "/Resume": {
+    name: "Resume",
+  },
+};
+const navIcons = {
+  github: {
+    name: "GitHub",
+    url: "github.com/doongsilee",
+    iconUrl:
+      "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
+  },
+  linkedin: {
+    name: "LinkedIn",
+    url: "www.linkedin.com/in/hyunwoo-lee-366261ba/",
+    iconUrl: "https://cdn-icons-png.flaticon.com/256/3536/3536569.png",
+  },
+  twitter: {
+    name: "Twitter",
+    url: "twitter.com/doongsilee",
+    iconUrl:
+      "https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png",
+  },
+};
 
 export function Navbar() {
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+    <aside className="mb-16 tracking-tight">
+      <div className="lg:top-20 lg:sticky flex flex-row justify-between items-baseline">
+        <div>
+          <a
+            href="/"
+            className={`${Dohyun.className} font-bold text-4xl tracking-tight`}
+          >
+            둥실
+          </a>
+        </div>
         <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          className="relative flex flex-row flex-1 items-center px-0 scroll-pr-6 pb-0 md:overflow-auto fade"
           id="nav"
         >
-          <div className="flex flex-row space-x-0 pr-10">
+          <div className="flex flex-row flex-1 justify-center items-center">
             {Object.entries(navItems).map(([path, { name }]) => {
               return (
                 <Link
                   key={path}
                   href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                  className="relative flex m-1 px-2 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
                 >
                   {name}
                 </Link>
-              )
+              );
             })}
+          </div>
+          <div className="md:flex flex-row items-center hidden">
+            <a
+              key={"github"}
+              href={`https://${navIcons.github.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+            >
+              <img
+                src={navIcons.github.iconUrl}
+                alt={navIcons.github.name}
+                className="w-6 h-6 icon"
+              />
+            </a>
+            <a
+              key={"linkedin"}
+              href={`https://${navIcons.linkedin.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+            >
+              <img
+                src={navIcons.linkedin.iconUrl}
+                alt={navIcons.linkedin.name}
+                className="w-5 h-5 icon"
+              />
+            </a>
+            <a
+              key={"twitter"}
+              href={`https://${navIcons.twitter.url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex m-1 px-1 pl-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+            >
+              <img
+                src={navIcons.twitter.iconUrl}
+                alt={navIcons.twitter.name}
+                className="w-4 h-4 icon"
+              />
+            </a>
           </div>
         </nav>
       </div>
     </aside>
-  )
+  );
 }

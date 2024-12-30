@@ -12,16 +12,36 @@ function ArrowIcon() {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 export default function Footer() {
+  const navIcons = {
+    github: {
+      name: "GitHub",
+      url: "github.com/doongsilee",
+      iconUrl:
+        "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
+    },
+    linkedin: {
+      name: "LinkedIn",
+      url: "www.linkedin.com/in/hyunwoo-lee-366261ba/",
+      iconUrl: "https://cdn-icons-png.flaticon.com/256/3536/3536569.png",
+    },
+    twitter: {
+      name: "Twitter",
+      url: "twitter.com/doongsilee",
+      iconUrl:
+        "https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png",
+    },
+  };
   return (
-    <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
+    <footer className="">
+      <div className="flex flex-row justify-between items-end">
+        {/* <ul className="flex md:flex-row flex-col space-x-0 md:space-x-4 space-y-2 md:space-y-0 mt-8 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
             rel="noopener noreferrer"
             target="_blank"
             href="/rss"
@@ -32,7 +52,7 @@ export default function Footer() {
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
             rel="noopener noreferrer"
             target="_blank"
             href="https://github.com/vercel/next.js"
@@ -43,7 +63,7 @@ export default function Footer() {
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
             rel="noopener noreferrer"
             target="_blank"
             href="https://vercel.com/templates/next.js/portfolio-starter-kit"
@@ -52,10 +72,53 @@ export default function Footer() {
             <p className="ml-2 h-7">view source</p>
           </a>
         </li>
-      </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} MIT Licensed
-      </p>
+      </ul> */}
+        <p className="mt-8 text-neutral-600 dark:text-neutral-300">
+          © {new Date().getFullYear()} Doongsil Universe. All rights reserved.
+        </p>
+
+        <div className="flex flex-row items-center md:invisible">
+          <a
+            key={"github"}
+            href={`https://${navIcons.github.url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+          >
+            <img
+              src={navIcons.github.iconUrl}
+              alt={navIcons.github.name}
+              className="w-6 h-6 icon"
+            />
+          </a>
+          <a
+            key={"linkedin"}
+            href={`https://${navIcons.linkedin.url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+          >
+            <img
+              src={navIcons.linkedin.iconUrl}
+              alt={navIcons.linkedin.name}
+              className="w-5 h-5 icon"
+            />
+          </a>
+          <a
+            key={"twitter"}
+            href={`https://${navIcons.twitter.url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative flex m-1 px-1 pl-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+          >
+            <img
+              src={navIcons.twitter.iconUrl}
+              alt={navIcons.twitter.name}
+              className="w-4 h-4 icon"
+            />
+          </a>
+        </div>
+      </div>
     </footer>
-  )
+  );
 }

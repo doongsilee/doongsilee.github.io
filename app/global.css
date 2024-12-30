@@ -27,6 +27,9 @@
   html {
     color-scheme: dark;
   }
+  .icon {
+    filter: invert(1);
+  }
 }
 
 html {
