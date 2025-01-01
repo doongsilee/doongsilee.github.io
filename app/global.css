@@ -17,7 +17,7 @@
   --sh-entity: #e25a1c;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --sh-class: #4c97f8;
     --sh-identifier: white;
@@ -30,14 +30,14 @@
   .icon {
     filter: invert(1);
   }
-}
+} */
 
 html {
   min-width: 360px;
 }
 
 .prose .anchor {
-  @apply absolute invisible no-underline;
+  @apply absolute no-underline invisible;
 
   margin-left: -1em;
   padding-right: 0.5em;
@@ -51,7 +51,7 @@ html {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline underline-offset-2 transition-all dark:decoration-neutral-600 decoration-[0.1em] decoration-neutral-400;
 }
 
 .prose .anchor:after {
@@ -64,7 +64,7 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+  @apply border-neutral-200 dark:border-neutral-900 bg-neutral-50 dark:bg-neutral-900 px-3 py-2 border rounded-lg text-sm overflow-x-auto;
 }
 
 .prose code {
@@ -91,19 +91,19 @@ html {
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 font-medium text-4xl tracking-tight;
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 font-medium text-xl tracking-tight;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 font-medium text-xl tracking-tight;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 font-medium text-lg tracking-tight;
 }
 
 .prose strong {
@@ -111,11 +111,11 @@ html {
 }
 
 .prose ul {
-  @apply list-disc pl-6;
+  @apply pl-6 list-disc;
 }
 
 .prose ol {
-  @apply list-decimal pl-6;
+  @apply pl-6 list-decimal;
 }
 
 .prose > :first-child {

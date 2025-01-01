@@ -36,7 +36,7 @@ export default function Footer() {
     },
   };
   return (
-    <footer className="">
+    <footer className="py-2">
       <div className="flex flex-row justify-between items-end">
         {/* <ul className="flex md:flex-row flex-col space-x-0 md:space-x-4 space-y-2 md:space-y-0 mt-8 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
@@ -73,7 +73,7 @@ export default function Footer() {
           </a>
         </li>
       </ul> */}
-        <p className="mt-8 text-neutral-600 dark:text-neutral-300">
+        <p className="mt-8 text-neutral-900">
           © {new Date().getFullYear()} Doongsil Universe. All rights reserved.
         </p>
 

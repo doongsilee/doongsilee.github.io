@@ -14,9 +14,9 @@ const navItems = {
   "/portfolio": {
     name: "Portfolio",
   },
-  "/Resume": {
-    name: "Resume",
-  },
+  // "/Resume": {
+  //   name: "Resume",
+  // },
 };
 const navIcons = {
   github: {
