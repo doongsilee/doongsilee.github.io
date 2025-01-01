@@ -138,7 +138,14 @@ export default function Page() {
         {
           id: "t03",
           category: "Vision AI",
-          stack: ["Tensorflow lite", "mediapipe", "Pytorch", "OpenCV", "YOLO", "Re3"],
+          stack: [
+            "Tensorflow lite",
+            "mediapipe",
+            "Pytorch",
+            "OpenCV",
+            "YOLO",
+            "Re3",
+          ],
         },
         {
           id: "t02",
@@ -147,9 +154,9 @@ export default function Page() {
         },
       ],
       images: [
-        "/images/portfolio/zzikza_1.png",
-        "/images/portfolio/zzikza_2.png",
-        "/images/portfolio/zzikza_3.png",
+        "/images/portfolio/ZZIKZA_1.png",
+        "/images/portfolio/ZZIKZA_2.png",
+        "/images/portfolio/ZZIKZA_3.png",
       ],
     },
   ];
