@@ -40,12 +40,12 @@ const navIcons = {
 
 export function Navbar() {
   return (
-    <aside className="mb-16 tracking-tight">
+    <aside className="px-2 tracking-tight">
       <div className="lg:top-20 lg:sticky flex flex-row justify-between items-baseline">
         <div>
           <a
             href="/"
-            className={`${Dohyun.className} font-bold text-4xl tracking-tight`}
+            className={`${Dohyun.className} font-bold text-2xl md:text-4xl tracking-tight`}
           >
             둥실
           </a>
@@ -54,13 +54,13 @@ export function Navbar() {
           className="relative flex flex-row flex-1 items-center px-0 scroll-pr-6 pb-0 md:overflow-auto fade"
           id="nav"
         >
-          <div className="flex flex-row flex-1 justify-center items-center">
+          <div className="flex flex-row flex-1 justify-end md:justify-center items-center">
             {Object.entries(navItems).map(([path, { name }]) => {
               return (
                 <Link
                   key={path}
                   href={path}
-                  className="relative flex m-1 px-2 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+                  className="relative flex m-1 px-2 py-1 text-sm md:text-lg hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
                 >
                   {name}
                 </Link>

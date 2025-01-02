@@ -7,11 +7,11 @@ export default function Page() {
       <div className="flex flex-row flex-1">
         <div className="flex flex-col justify-center gap-12 h-full">
           <h1
-            className={`font-semibold text-left tracking-tighter ${MontserratFont.className} md:text-9xl text-6xl`}
+            className={`font-semibold text-left tracking-tighter ${MontserratFont.className} md:text-9xl text-5xl`}
           >
             Hi there! ✋🏻 <br />
           </h1>
-          <h3 className="font-light text-2xl md:text-3xl leading-loose tracking-wider">
+          <h3 className="font-light text-xl md:text-3xl leading-loose tracking-wider">
             I'm Hyunwoo. <br />
             Software engineer & Entrepreneur living in South Korea.
           </h3>

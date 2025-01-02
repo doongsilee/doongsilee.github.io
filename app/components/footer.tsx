@@ -36,8 +36,8 @@ export default function Footer() {
     },
   };
   return (
-    <footer className="py-2">
-      <div className="flex flex-row justify-between items-end">
+    <footer className="pt-2">
+      <div className="flex flex-row justify-between items-center">
         {/* <ul className="flex md:flex-row flex-col space-x-0 md:space-x-4 space-y-2 md:space-y-0 mt-8 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
           <a
@@ -73,7 +73,7 @@ export default function Footer() {
           </a>
         </li>
       </ul> */}
-        <p className="mt-8 text-neutral-900">
+        <p className="text-neutral-900 text-xs md:text-sm">
           © {new Date().getFullYear()} Doongsil Universe. All rights reserved.
         </p>
 
@@ -88,7 +88,7 @@ export default function Footer() {
             <img
               src={navIcons.github.iconUrl}
               alt={navIcons.github.name}
-              className="w-6 h-6 icon"
+              className="w-4 h-4 icon"
             />
           </a>
           <a
@@ -101,7 +101,7 @@ export default function Footer() {
             <img
               src={navIcons.linkedin.iconUrl}
               alt={navIcons.linkedin.name}
-              className="w-5 h-5 icon"
+              className="w-3 h-3 icon"
             />
           </a>
           <a
@@ -114,7 +114,7 @@ export default function Footer() {
             <img
               src={navIcons.twitter.iconUrl}
               alt={navIcons.twitter.name}
-              className="w-4 h-4 icon"
+              className="w-3 h-3 icon"
             />
           </a>
         </div>
