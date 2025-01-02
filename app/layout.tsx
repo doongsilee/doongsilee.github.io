@@ -58,7 +58,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="lg:mx-auto max-w-5xl h-lvh antialiased">
+      <body className="lg:mx-auto max-w-5xl h-svh antialiased">
         <main className="flex flex-col flex-auto px-2 py-2 md:py-4 min-w-0 h-full">
           <Navbar />
           <div className="flex-1">{children}</div>
