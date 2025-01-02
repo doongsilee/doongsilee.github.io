@@ -11,9 +11,9 @@ export default function Page() {
           >
             Hi there! ✋🏻 <br />
           </h1>
-          <h3 className="font-light text-xl md:text-3xl leading-loose tracking-wider">
-            I'm Hyunwoo. <br />
-            Software engineer & Entrepreneur living in South Korea.
+          <h3 className="font-light text-md md:text-3xl md:leading-[150%] tracking-wider">
+            I'm doongsil from Seoul, South Korea. <br />
+            A Software Engineer and Entrepreneur
           </h3>
         </div>
         {/* <ul className="">

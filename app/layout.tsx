@@ -1,7 +1,5 @@
 import "./global.css";
 import type { Metadata } from "next";
-// import { GeistSans } from "geist/font/sans";
-// import { GeistMono } from "geist/font/mono";
 import { Navbar } from "./components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -44,14 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      // className={cx(
-      //   // "text-black bg-white dark:text-white dark:bg-black"
-      //   // GeistSans.className,
-      //   // GeistMono.className
-      // )}
-    >
+    <html lang="en">
       <head>
         <title>Doongsil Universe</title>
         <meta name="description" content="Hyunwoo's Portfolio" />
