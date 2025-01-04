@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <div>
+    <div className="py-12">
       <h1 className="mb-24 text-6xl">About me</h1>
 
       <div>Traveler</div>

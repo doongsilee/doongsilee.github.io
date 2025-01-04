@@ -1,0 +1,45 @@
+---
+title: 'Python JSON Dump witn non ASCII characters'
+publishedAt: '2025-01-04'
+---
+
+# tl;dr
+
+Using `ensure_ascii=False` in `json.dump()` method will write non-ASCII characters as it is to the file.
+
+```python
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False)
+```
+
+# Problem
+
+When writing JSON data to a file using `json.dump()` method, non-ASCII characters such as Korean are not written as it is to the file.  
+Instead, they are escaped using Unicode escape sequences like this.
+
+```json
+{
+    "name": "\ud55c\uae00",
+    "age": 30
+}
+```
+
+# Solution
+
+This is because `json.dump()` method by default encodes data based on the ASCII character set.  
+To solve this problem, you can use the `ensure_ascii=False` parameter in the `json.dump()` method.
+
+```python
+import json
+
+data = {
+    "name": "한글",
+    "age": 30
+}
+
+with open('data.json', 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False)
+```
+
+Do not forget to specify the encoding as `utf-8` when opening the file to write the JSON data.  
+If you omit the encoding parameter, the default encoding of the system will be used, which may differ depending on the system and cause encoding errors.

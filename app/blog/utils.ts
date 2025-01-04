@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  draft?: string
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -46,7 +47,7 @@ function getMDXData(dir) {
       slug,
       content,
     }
-  })
+  }).filter((post) => !post.metadata.draft || post.metadata.draft !== 'true')
 }
 
 export function getBlogPosts() {

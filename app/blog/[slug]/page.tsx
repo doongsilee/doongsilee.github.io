@@ -59,14 +59,14 @@ export default function Blog({ params }) {
   }
 
   return (
-    <section>
+    <section className="px-2 py-8 md:py-24">
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
@@ -76,23 +76,29 @@ export default function Blog({ params }) {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
-              '@type': 'Person',
-              name: 'My Portfolio',
+              "@type": "Person",
+              name: "My Portfolio",
             },
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <a
+        href="/blog"
+        className="text-neutral-600 text-sm md:text-base dark:text-neutral-400 cursor-pointer"
+      >
+        ← Back to List
+      </a>
+      <h1 className="mt-2 font-semibold text-md md:text-2xl tracking-tighter title">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+      <div className="flex justify-between items-center mt-2 mb-8 text-xs">
+        <p className="text-neutral-600 text-sm md:text-lg dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose">
+      <article className="text-sm md:text-xl prose">
         <CustomMDX source={post.content} />
       </article>
     </section>
-  )
+  );
 }
