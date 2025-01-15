@@ -56,6 +56,11 @@ export default function Page() {
           url: "https://doongsilee-portfolio.s3.ap-northeast-2.amazonaws.com/macdal_1.mp4",
           thumbnail: "/portfolio/macdal_1.png",
         },
+        {
+          type: "video",
+          url: "https://doongsilee-portfolio.s3.ap-northeast-2.amazonaws.com/Macdal-demo.mp4",
+          thumbnail: "/portfolio/macdal_2.png",
+        },
       ],
     },
     {
