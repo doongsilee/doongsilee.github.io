@@ -32,7 +32,7 @@ const navIcons = {
   },
   twitter: {
     name: "Twitter",
-    url: "twitter.com/doongsilee",
+    url: "x.com/RyanLee79385082",
     iconUrl:
       "https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png",
   },
