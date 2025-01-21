@@ -1,0 +1,53 @@
+---
+title: 'Understanding the Foundations of Machine Learning and Model Categories'
+publishedAt: '2025-01-21'
+summary: 'Explore the foundational concepts of machine learning models, including supervised, unsupervised, and reinforcement learning.'
+draft: false
+category: 'Machine Learning'
+---
+
+## 들어가며
+
+2025년, 인공지능과 머신러닝은 우리 삶에 더욱 밀접하게 다가오고 있습니다.
+인공지능과 머신러닝은 이미 우리 주변에서 다양한 형태로 활용되고 있으며, 앞으로 더욱 많은 분야에서 적용될 것으로 예상됩니다.
+그렇다면, 머신러닝이란 무엇일까요? 머신러닝 모델은 어떤 종류가 있을까요? 이번 포스트에서는 머신러닝의 기초 개념과 모델 카테고리에 대해 알아보겠습니다.
+
+## 머신러닝이란?
+
+![Machine Learning Model Categories](/images/ml-concepts.png)
+
+먼저 인공지능 (Artificial Intelligence)와 머신러닝 (Machine Learning)의 차이점은 무엇일까요?
+
+**Artificial Intelligence (AI)**: 인공지능은 인간의 지능을 모방하거나 대체하는 기술을 종합적으로 말할때 사용됩니다. 컴퓨터 프로그램이 인간의 학습, 추론, 문제 해결 능력을 갖도록 하는 기술을 포괄적으로 말합니다.   
+**Machine Learning (ML)**: 머신러닝은 데이터를 기반으로 컴퓨터를 학습시키는 인공지능을 구현하기 위한 하나의 기술입니다. 여기서 중요한것은 많은 수의 데이터를 이용하여 컴퓨터가 스스로 학습할수 있도록 한다는 점에서 
+기존의 프로그래밍 방식과 차이가 있습니다. 
+
+즉, 머신러닝은 인공지능을 구현하기 위한 하나의 방법론이라고 할 수 있습니다.  
+그리도 다시 앞으로 살펴볼 Supervised Learning, Unsupervised Learning, Reinforcement Learning 등은 이러한 머신러닝의 구현하기 위한 여러 방법들 중 하나입니다.
+하나씩 살펴보겠습니다.
+
+## Supervised Learning (지도학습)
+
+Supervised Learning 은 레이블이 달린 데이터를 사용하여 모델을 학습하는 방법입니다. 쉽게 얘기하자면 정답이 있는 데이터를 제공하고 모델이 이 데이터를 학습하여 새로운 데이터에 대한 예측을 할 수 있도록 하는 방법입니다.
+예를 들면 사진속의 강아지를 찾는 문제를 생각해보죠. 수많은 '강아지' 라는 레이블(정답이라고 이해해도 좋습니다.) 이 달린 사진을 모델에게 제공하여 모델이 강아지에 대한 패턴을 학습하도록 합니다.
+그리고 새로운 사진을 모델에게 제공하면 모델은 이 사진이 강아지인지 아닌지를 예측할 수 있도록 하는 것이죠.
+Supervised Learning 은 대표적으로 **Regression**(회귀) 과 **Classification**(분류) 등의 모델이 문제 해결에 많이 쓰입니다.
+
+**Regression**: 연속적인 값을 예측하는 모델입니다. 예를 들어, 과거의 판매 데이터를 토대로 미래의 판매량을 예측한다던가, 주택의 가격을 예측하는 문제 등이 있습니다. Linear Regression 등이 사용됩니다.  
+**Classification**: 카테고리를 예측하는 모델입니다. 앞서보았듯 사진속의 강아지를 분류하는 작업, 스팸 메일을 분류하는 문제, 손글씨 숫자를 인식하는 문제 등이 이에 해당합니다. Logistic Regression 등이 사용됩니다.
+
+## Unsupervised Learning (비지도학습)
+
+Unsupervised Learning 은 레이블이 달리지 않은 데이터를 사용하여 모델을 학습하는 방법입니다. 이 방법은 데이터의 숨겨진 구조나 패턴을 발견하는데 사용됩니다.
+예를 들면 많은 수의 강아지 사진 중에서 비슷한 강아지 사진끼리 묶는 작업을 생각해보죠. 이때 강아지 사진에 대한 레이블이 없어도 같은 종의 강아지를 묶는것이 가능합니다.
+
+Unsupervised Learning 은 대표적으로 **Clustering**(군집화) 와 **Assosiation**(연관), **Dimensionality Reduction**(차원 축소) 등의 모델이 문제 해결에 많이 쓰입니다.
+
+**Clustering**: 데이터를 비슷한 특성을 가진 그룹으로 나누는 작업입니다. 예를 들어, 고객들을 구매 패턴에 따라 그룹화하거나, 뉴스 기사를 주제에 따라 분류하는 작업 등이 있습니다. K-means, DBSCAN 등이 사용됩니다.  
+**Assosiation**: 데이터 간의 연관성을 찾는 작업입니다. 장바구니 분석, 추천 시스템 등이 있습니다. Apriori, FP-growth 등이 사용됩니다.  
+**Dimensionality Reduction**: 데이터의 차원을 줄이는 작업입니다. 데이터의 시각화, 노이즈 제거, 모델의 성능 향상 등에 사용됩니다. PCA, t-SNE 등이 사용됩니다.  
+
+
+
+
+
