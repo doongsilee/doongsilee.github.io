@@ -32,11 +32,11 @@ export function BlogPosts({ allBlogs }) {
 
   return (
     <div className="">
-      <div className="flex flex-row gap-2 mb-16">
+      <div className="flex flex-row flex-wrap gap-2 mb-8">
         {allCategories.map((category, index) => (
           <span
             key={index}
-            className={`border-2 px-4 py-1 border-black rounded-2xl text-black text-xl ${
+            className={`border-2 px-2 md:px-4 py-1 border-black rounded-xl md:rounded-2xl text-black text-sm md:text-xl ${
               selectedCategoryIndex === index
                 ? "bg-black text-white"
                 : "bg-white"
