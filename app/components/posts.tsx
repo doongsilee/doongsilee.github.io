@@ -64,7 +64,7 @@ export function BlogPosts({ allBlogs }) {
             href={`/blog/${post.slug}`}
           >
             <div className="flex flex-col gap-2 space-x-0 w-full">
-              <p className="font-semibold text-neutral-900 md:text-xl dark:text-neutral-100 tracking-tight">
+              <p className="font-semibold text-neutral-900 md:text-xl tracking-tight">
                 {post.metadata.title}
               </p>
               {/* {post.metadata.tags && (
