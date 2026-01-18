@@ -40,7 +40,7 @@ const navIcons = {
 
 export function Navbar() {
   return (
-    <aside className="px-2 tracking-tight">
+    <aside className="bg-transparent px-2 tracking-tight">
       <div className="lg:top-20 lg:sticky flex flex-row justify-between items-baseline">
         <div>
           <a
@@ -51,7 +51,7 @@ export function Navbar() {
           </a>
         </div>
         <nav
-          className="relative flex flex-row flex-1 items-center px-0 scroll-pr-6 pb-0 md:overflow-auto fade"
+          className="relative flex flex-row flex-1 items-center px-0 pb-0 md:overflow-auto scroll-pr-6 fade"
           id="nav"
         >
           <div className="flex flex-row flex-1 justify-end md:justify-center items-center">
@@ -60,20 +60,20 @@ export function Navbar() {
                 <Link
                   key={path}
                   href={path}
-                  className="relative flex m-1 px-2 py-1 text-sm md:text-lg hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+                  className="relative flex m-1 px-2 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 text-sm md:text-lg align-middle transition-all"
                 >
                   {name}
                 </Link>
               );
             })}
           </div>
-          <div className="md:flex flex-row items-center hidden">
+          <div className="hidden md:flex flex-row items-center">
             <a
               key={"github"}
               href={`https://${navIcons.github.url}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+              className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 align-middle transition-all"
             >
               <img
                 src={navIcons.github.iconUrl}
@@ -86,7 +86,7 @@ export function Navbar() {
               href={`https://${navIcons.linkedin.url}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+              className="relative flex m-1 py-1 hover:text-neutral-800 dark:hover:text-neutral-200 align-middle transition-all"
             >
               <img
                 src={navIcons.linkedin.iconUrl}
@@ -99,7 +99,7 @@ export function Navbar() {
               href={`https://${navIcons.twitter.url}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative flex m-1 px-1 pl-1 hover:text-neutral-800 dark:hover:text-neutral-200 transition-all align-middle"
+              className="relative flex m-1 px-1 pl-1 hover:text-neutral-800 dark:hover:text-neutral-200 align-middle transition-all"
             >
               <img
                 src={navIcons.twitter.iconUrl}

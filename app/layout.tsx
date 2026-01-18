@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
+import AnimatedBackground from "./components/animated-background";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -49,10 +50,11 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="lg:mx-auto max-w-5xl h-svh antialiased">
-        <main className="flex flex-col flex-auto px-2 py-2 md:py-4 min-w-0 h-full">
+      <body className="relative lg:mx-auto max-w-5xl h-svh antialiased">
+        {/* <AnimatedBackground /> */}
+        <main className="flex flex-col flex-auto px-4 md:px-2 py-2 md:py-4 min-w-0 h-full">
           <Navbar />
-          <div className="flex-1">{children}</div>
+          <div className="flex-1 overflow-visible">{children}</div>
           <Footer />
           <Analytics />
           <SpeedInsights />

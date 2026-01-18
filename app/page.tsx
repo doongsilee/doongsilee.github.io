@@ -1,20 +1,95 @@
+'use client';
+
 import { BlogPosts } from "app/components/posts";
 import { MontserratFont } from "./ui/fonts";
+import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import { motion } from "framer-motion";
+import rocket from "../public/anims/Rocket.json";
 
 export default function Page() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(1200);
+
+  useEffect(() => {
+    setIsVisible(true);
+    setScreenWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <section className="flex flex-col h-full">
+    <section className="relative flex flex-col h-full">
+      {/* Flying Rocket */}
+      <motion.div
+        className="top-16 -left-32 z-10 fixed pointer-events-none"
+        animate={{
+          x: [0, screenWidth + 200],
+          y: [0, -50, 30, -20, 50, 0],
+        }}
+        transition={{
+          x: {
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear",
+          },
+          y: {
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        }}
+      >
+        <div className="w-32 md:w-40 h-32 md:h-40" style={{ transform: 'rotate(90deg)' }}>
+          <Lottie animationData={rocket} loop={true} />
+        </div>
+      </motion.div>
+
       <div className="flex flex-row flex-1">
-        <div className="flex flex-col justify-center gap-12 h-full">
-          <h1
-            className={`font-semibold text-left tracking-tighter ${MontserratFont.className} md:text-9xl text-5xl`}
-          >
-            Hi there! ✋🏻 <br />
-          </h1>
-          <h3 className="font-light text-md md:text-3xl md:leading-[150%] tracking-wider">
-            I'm doongsil from Seoul, South Korea. <br />
-            A Software Engineer and Entrepreneur
+        <div className="relative flex flex-col justify-center gap-12 h-full">
+          {/* Decorative element */}
+          <div className={`absolute -left-8 top-1/4 w-1 h-32 ${isVisible ? 'animate-scale-in animation-delay-600' : 'opacity-0'
+            }`}></div>
+
+          <div className="space-y-4">
+            <div className={`inline-block px-4 py-2 rounded-full bg-neutral-100 text-sm font-medium text-neutral-700 ${isVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+              }`}>
+              Welcome to my universe
+            </div>
+
+            <h1
+              className={`font-semibold text-left tracking-tighter ${MontserratFont.className} md:text-9xl text-5xl bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-transparent transition-all duration-300 hover:scale-105 ${isVisible ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'
+                }`}
+            >
+              Hi there! ✋🏻 <br />
+            </h1>
+          </div>
+
+          <h3 className={`font-light text-md md:text-3xl md:leading-[150%] tracking-wider text-neutral-600 max-w-4xl ${isVisible ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'
+            }`}>
+            Hi there! I'm <span className="font-semibold text-neutral-900">Hyunwoo</span>, a software developer and entrepreneur. Born in Korea, recently moved to Montreal. Want to know more? Check out the About page or reach out via email below.
           </h3>
+
+          {/* Quick links with animation */}
+          <div className={`flex gap-3 flex-wrap relative  mt-4 ${isVisible ? 'animate-fade-in-up animation-delay-800' : 'opacity-0'
+            }`}>
+           
+            <a href="/about" className="group bg-neutral-900 hover:bg-neutral-700 hover:shadow-lg px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-medium text-white text-sm md:text-base transition-all hover:-translate-y-1 duration-300">
+              About Me
+            </a>
+
+            {/* <a href="/blog" className="bg-white hover:shadow-lg px-4 md:px-6 py-2 md:py-3 border-2 border-neutral-200 hover:border-neutral-400 rounded-lg font-medium text-sm md:text-base transition-all hover:-translate-y-1 duration-300">
+              Read Blog
+            </a>
+            <a href="/portfolio" className="bg-white hover:shadow-lg px-4 md:px-6 py-2 md:py-3 border-2 border-neutral-200 hover:border-neutral-400 rounded-lg font-medium text-sm md:text-base transition-all hover:-translate-y-1 duration-300">
+              View Portfolio
+            </a> */}
+          </div>
         </div>
         {/* <ul className="">
             <li>Living in Seoul, South Korea with family</li>
