@@ -19,31 +19,41 @@ const PortfolioCard = ({ portfolio }) => {
     contribution,
     links,
     stacks,
+    organization,
   } = portfolio;
 
   return (
-    <div className="flex flex-col gap-6 px-2">
-      <div className="flex flex-col gap-12 min-w-xs">
-        <div className="flex flex-col gap-2">
-          <p className="text-gray-800 text-md">{subtitle}</p>
-          <h2 className="font-bold text-4xl leading-8">{title}</h2>
-          <ul className="flex flex-row flex-wrap gap-2 mt-4 text-sm">
-            {badges.map((badge, index) => (
-              <li
-                key={index}
-                className="bg-black px-4 py-1 rounded-2xl font-semibold text-white"
-              >
-                {badge}
-              </li>
-            ))}
-          </ul>
-          <p className="text-gray-500 text-md whitespace-pre-line">
-            {description}
-          </p>
+    <div className="flex flex-col gap-10 py-4">
+      {/* Top: Header Info */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-neutral-100">
+        <div className="flex flex-col gap-2 flex-1">
+          <div className="flex items-center gap-3 mb-1">
+            <span className={`px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest border transition-colors whitespace-nowrap ${type === "Founder Project"
+              ? "bg-indigo-50 text-indigo-600 border-indigo-100"
+              : "bg-emerald-50 text-emerald-600 border-emerald-100"
+              }`}>
+              {type === "Founder Project" ? "🚀 Venture" : "🤝 Client Work"}
+            </span>
+            <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em]">{subtitle}</span>
+          </div>
+          <h2 className="font-black text-4xl md:text-5xl lg:text-6xl text-neutral-900 tracking-tighter leading-[0.9]">{title}</h2>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {badges.map((badge, index) => (
+            <span
+              key={index}
+              className="bg-neutral-50 px-3 py-1 rounded-lg text-[10px] font-bold text-neutral-500 uppercase tracking-wider border border-neutral-100"
+            >
+              {badge}
+            </span>
+          ))}
         </div>
       </div>
-      <div className="flex flex-col flex-1 gap-8">
-        <div className="relative overflow-hidden aspect-video">
+
+      {/* Middle: Large Visuals */}
+      <div className="flex flex-col gap-6">
+        <div className="relative overflow-hidden aspect-video group shadow-xl rounded-[2.5rem] bg-neutral-100">
           {medias &&
             medias.map((media, i) => {
               if (media.type === "image") {
@@ -51,12 +61,11 @@ const PortfolioCard = ({ portfolio }) => {
                   <Image
                     key={i}
                     src={media.url}
-                    alt="Macdal"
-                    width={1092}
-                    height={614}
-                    className={`absolute top-0 left-0 w-full h-full rounded-lg object-contain transition-opacity duration-500 ease-in-out ${
-                      index === i ? "opacity-100 z-10" : "opacity-0 z-0"
-                    }`}
+                    alt={title}
+                    width={1920}
+                    height={1080}
+                    className={`absolute top-0 left-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${index === i ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                      }`}
                   />
                 );
               } else {
@@ -69,88 +78,35 @@ const PortfolioCard = ({ portfolio }) => {
                     muted
                     controls
                     playsInline
-                    className={`absolute top-0 left-0 w-full h-full rounded-lg object-cover transition-opacity duration-500 ease-in-out ${
-                      index === i ? "opacity-100 z-10" : "opacity-0 z-0"
-                    }`}
+                    className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-700 ease-in-out ${index === i ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                      }`}
                   />
-                  // <iframe src={media.url} className="w-full h-full" />
                 );
               }
             })}
         </div>
-        <div className="flex flex-row gap-4 aspect-[16/3]">
+
+        {/* Thumbnail Navigation */}
+        <div className="flex flex-row justify-center gap-3 px-4">
           {medias &&
             medias.map((media, i) => {
               return (
                 <div
-                  className={`relative flex-1 max-w-[33%] rounded-lg cursor-pointer p-0 box-border ${
-                    index === i ? "outline-red-400 outline-4" : ""
-                  }`}
+                  key={i}
+                  className={`relative w-20 md:w-28 aspect-video rounded-xl cursor-pointer overflow-hidden transition-all duration-300 ${index === i ? "ring-2 ring-neutral-900 ring-offset-2 scale-95 shadow-lg" : "opacity-50 hover:opacity-100 grayscale hover:grayscale-0"
+                    }`}
                   onClick={() => setIndex(i)}
                 >
                   <Image
                     src={media.type === "image" ? media.url : media.thumbnail}
-                    alt="Macdal"
+                    alt={`${title} thumb`}
                     fill
-                    className="rounded-lg object-cover"
+                    className="object-cover"
                   />
                   {media.type === "video" && (
-                    <div className="absolute inset-0 flex justify-center items-center">
-                      <div className="w-4 md:w-9 h-4 md:h-9">
-                        <svg
-                          // width="48"
-                          // height="48"
-                          viewBox="0 0 150 177"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <g filter="url(#filter0_d_3079_4193)">
-                            <path
-                              d="M140 90.8923C148 86.2735 148 74.7265 140 70.1077L22.25 2.1247C14.25 -2.4941 4.25 3.2794 4.25 12.517V148.483C4.25 157.721 14.25 163.494 22.25 158.875L140 90.8923Z"
-                              fill="white"
-                            />
-                          </g>
-                          <defs>
-                            <filter
-                              id="filter0_d_3079_4193"
-                              x="0.25"
-                              y="0.499023"
-                              width="149.75"
-                              height="176.002"
-                              filterUnits="userSpaceOnUse"
-                              color-interpolation-filters="sRGB"
-                            >
-                              <feFlood
-                                flood-opacity="0"
-                                result="BackgroundImageFix"
-                              />
-                              <feColorMatrix
-                                in="SourceAlpha"
-                                type="matrix"
-                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                result="hardAlpha"
-                              />
-                              <feOffset dy="12" />
-                              <feGaussianBlur stdDeviation="2" />
-                              <feComposite in2="hardAlpha" operator="out" />
-                              <feColorMatrix
-                                type="matrix"
-                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
-                              />
-                              <feBlend
-                                mode="normal"
-                                in2="BackgroundImageFix"
-                                result="effect1_dropShadow_3079_4193"
-                              />
-                              <feBlend
-                                mode="normal"
-                                in="SourceGraphic"
-                                in2="effect1_dropShadow_3079_4193"
-                                result="shape"
-                              />
-                            </filter>
-                          </defs>
-                        </svg>
+                    <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
+                      <div className="w-4 h-4 text-white opacity-90 drop-shadow-md">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
                       </div>
                     </div>
                   )}
@@ -159,57 +115,68 @@ const PortfolioCard = ({ portfolio }) => {
             })}
         </div>
       </div>
-      <div className="flex flex-col gap-2">
-        <div>
-          <p className="font-bold">Period</p>
-          <p className="text-gray-600">{period}</p>
-        </div>
-        <div>
-          <p className="font-bold">Project Type</p>
-          <p className="text-gray-600">{type}</p>
-        </div>
-        <div>
-          <p className="font-bold">Role</p>
-          <p className="text-gray-600">{role}</p>
-        </div>
-        <div>
-          <p className="font-bold">Contribution</p>
-          <p className="text-gray-600">{contribution}</p>
-        </div>
-        <div>
-          <p className="font-bold">Link</p>
-          <div className="flex flex-row gap-2 text-gray-600">
-            {links.length > 0
-              ? links.map((link) => {
-                  return (
-                    <a href={link.link} className="underline" target="_blank">
-                      {link.title}
-                    </a>
-                  );
-                })
-              : "-"}
-          </div>
-        </div>
-        <div>
-          <p className="font-bold">Tech Stack</p>
-          <div className="flex flex-col gap-1 text-gray-600">
-            {stacks.map((category) => {
-              return (
-                <div className="flex flex-row items-center gap-2 mt-2">
-                  <p className="font-semibold">{category.category}</p>
-                  <div className="flex flex-row flex-wrap flex-1 gap-2 text-gray-800 overflow-hidden">
-                    {category.stack.map((stack) => {
-                      return (
-                        <span className="bg-gray-200 px-3 py-1 rounded-2xl">
-                          {stack}
-                        </span>
-                      );
-                    })}
+
+      {/* Bottom: Detailed Info & Meta */}
+      <div className="flex flex-col lg:flex-row gap-12 pt-4">
+        <div className="flex-[1.5] flex flex-col gap-6">
+          <p className="text-neutral-600 text-xl md:text-2xl leading-relaxed font-light">
+            {description}
+          </p>
+
+          <div className="flex flex-col gap-4 mt-4">
+            <p className="text-[10px] font-black text-neutral-300 uppercase tracking-widest">Tech Infrastructure</p>
+            <div className="flex flex-col gap-5">
+              {stacks.map((category) => (
+                <div key={category.id} className="flex flex-col md:flex-row md:items-center gap-3">
+                  <span className="min-w-[140px] text-[10px] font-bold text-neutral-400 uppercase tracking-wider">{category.category}</span>
+                  <div className="flex flex-wrap gap-2">
+                    {category.stack.map((item, idx) => (
+                      <span key={idx} className="bg-neutral-50 border border-neutral-100 px-3 py-1 rounded-md text-[11px] font-medium text-neutral-600 transition-colors hover:bg-white hover:border-neutral-200">
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
+        </div>
+
+        {/* Metadata Sidebar */}
+        <div className="flex-1 flex flex-col gap-8 p-8 bg-neutral-50/50 rounded-[2rem] border border-neutral-100/50">
+          {organization && (
+            <div>
+              <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mb-2 opacity-50">Organization</p>
+              <p className="text-md font-bold text-neutral-800">{organization}</p>
+            </div>
+          )}
+          <div>
+            <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mb-2 opacity-50">Period</p>
+            <p className="text-md font-bold text-neutral-800">{period}</p>
+          </div>
+          <div>
+            <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mb-2 opacity-50">Execution</p>
+            <p className="text-md font-bold text-neutral-800">{contribution} Contribution</p>
+          </div>
+          <div>
+            <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mb-2 opacity-50">Primary Role</p>
+            <p className="text-md font-bold text-neutral-800 leading-snug">{role}</p>
+          </div>
+          {links.length > 0 && (
+            <div>
+              <p className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mb-2 opacity-50">Live Links</p>
+              <div className="flex flex-col gap-2">
+                {links.map((link, i) => (
+                  <a key={i} href={link.link} target="_blank" className="inline-flex items-center text-sm font-bold text-indigo-500 hover:text-indigo-600 group transition-colors">
+                    {link.title}
+                    <svg className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

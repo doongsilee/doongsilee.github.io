@@ -15,8 +15,13 @@ module.exports = {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
         'fade-in': 'fadeIn 1s ease-out forwards',
         'scale-in': 'scaleIn 0.6s ease-out forwards',
+        'marquee': 'marquee 25s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
         float: {
           '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
           '33%': { transform: 'translate(30px, -30px) scale(1.1)' },
