@@ -51,44 +51,51 @@ export default function Page() {
       </motion.div>
 
       <div className="flex flex-row flex-1">
-        <div className="relative flex flex-col justify-center gap-12 h-full">
+        <div className="relative flex flex-col justify-center gap-6 md:gap-12 h-full py-8 md:py-0">
           {/* Decorative element */}
           <div className={`absolute -left-8 top-1/4 w-1 h-32 ${isVisible ? 'animate-scale-in animation-delay-600' : 'opacity-0'
             }`}></div>
 
-          <div className="space-y-4">
-            <div className={`inline-block px-4 py-2 rounded-full bg-neutral-100 text-sm font-medium text-neutral-700 ${isVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
+          <div className="space-y-2 md:space-y-4">
+            {/* <div className={`inline-block px-4 py-2 rounded-full bg-neutral-100 text-sm font-medium text-neutral-700 ${isVisible ? 'animate-scale-in animation-delay-200' : 'opacity-0'
               }`}>
               Welcome to my universe
-            </div>
+            </div> */}
 
             <h1
-              className={`font-semibold text-left tracking-tighter ${MontserratFont.className} md:text-9xl text-5xl bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-transparent transition-all duration-300 hover:scale-105 ${isVisible ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'
+              className={`font-semibold text-left tracking-tighter ${MontserratFont.className} text-4xl md:text-9xl bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-900 bg-clip-text text-transparent transition-all duration-300 hover:scale-105 ${isVisible ? 'animate-fade-in-up animation-delay-400' : 'opacity-0'
                 }`}
             >
               Hi there! ✋🏻 <br />
             </h1>
           </div>
 
-          <h3 className={`font-light text-md md:text-3xl md:leading-[150%] tracking-wider text-neutral-600 max-w-4xl ${isVisible ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'
+          <h3 className={`font-light text-sm md:text-3xl md:leading-[150%] tracking-wider text-neutral-600 max-w-4xl ${isVisible ? 'animate-fade-in-up animation-delay-600' : 'opacity-0'
             }`}>
             Hi there! I'm <span className="font-semibold text-neutral-900">Hyunwoo</span>, a software developer and entrepreneur. Born in Korea, recently moved to Montreal. Want to know more? Check out the About page or reach out via email below.
           </h3>
 
-          {/* Quick links with animation */}
-          <div className={`flex gap-3 flex-wrap relative  mt-4 ${isVisible ? 'animate-fade-in-up animation-delay-800' : 'opacity-0'
-            }`}>
-           
-            <a href="/about" className="group bg-neutral-900 hover:bg-neutral-700 hover:shadow-lg px-4 md:px-6 py-2.5 md:py-3 rounded-lg font-medium text-white text-sm md:text-base transition-all hover:-translate-y-1 duration-300">
-              About Me
-            </a>
+          {/* Quick links and Contact */}
+          <div className={`flex flex-col gap-6 md:gap-8 mt-2 md:mt-4 ${isVisible ? 'animate-fade-in-up animation-delay-800' : 'opacity-0'}`}>
+            <div className="flex gap-2 md:gap-4 flex-wrap">
+              <a href="/about" className="group bg-neutral-900 hover:bg-neutral-800 hover:shadow-2xl px-4 md:px-8 py-2 md:py-4 rounded-xl md:rounded-2xl font-bold text-white text-xs md:text-base transition-all hover:-translate-y-1 hover:scale-105 duration-300 flex items-center gap-2 shadow-lg shadow-neutral-200">
+                About Me <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
 
-            {/* <a href="/blog" className="bg-white hover:shadow-lg px-4 md:px-6 py-2 md:py-3 border-2 border-neutral-200 hover:border-neutral-400 rounded-lg font-medium text-sm md:text-base transition-all hover:-translate-y-1 duration-300">
-              Read Blog
-            </a>
-            <a href="/portfolio" className="bg-white hover:shadow-lg px-4 md:px-6 py-2 md:py-3 border-2 border-neutral-200 hover:border-neutral-400 rounded-lg font-medium text-sm md:text-base transition-all hover:-translate-y-1 duration-300">
-              View Portfolio
-            </a> */}
+              <a href="/portfolio" className="group bg-white hover:bg-neutral-50 hover:shadow-2xl px-4 md:px-8 py-2 md:py-4 border-2 border-neutral-900 rounded-xl md:rounded-2xl font-bold text-neutral-900 text-xs md:text-base transition-all hover:-translate-y-1 hover:scale-105 duration-300 shadow-lg shadow-neutral-100">
+                View Portfolio
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-1 md:gap-2 pt-2 md:pt-4">
+              <p className="text-[9px] md:text-[10px] font-black text-neutral-400 uppercase tracking-[0.3em]">contact me</p>
+              <a
+                href="mailto:ryanleehw@gmail.com"
+                className="text-lg md:text-3xl font-light text-neutral-500 hover:text-neutral-900 transition-all duration-300 underline decoration-neutral-200 underline-offset-4 md:underline-offset-8 decoration-1 hover:decoration-neutral-900 hover:decoration-2"
+              >
+                ryanleehw@gmail.com
+              </a>
+            </div>
           </div>
         </div>
         {/* <ul className="">
